@@ -9,6 +9,7 @@ RUN /usr/bin/apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 ENV EXCALIBUR_HOME /excalibur
+ADD excalibur.cfg /excalibur/excalibur.cfg
 
 ENTRYPOINT ["/usr/local/bin/excalibur"]
 CMD ["webserver"]
