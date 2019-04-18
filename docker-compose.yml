@@ -2,12 +2,17 @@ version: '3'
 
 services:
   excalibur:
-    image: williamjackson/excalibur
+    image: dwohlfahrt/excalibur
     build: .
     ports:
       - 5000:5000
     volumes:
-      - excalibur-data:/excalibur
+      - excalibur_uploads:/usr/local/lib/python3.7/site-packages/excalibur/www/static/uploads
+      - excalibur_home:/excalibur
 
 volumes:
-  excalibur-data:
+  excalibur_home:
+    driver: local
+  excalibur_uploads:
+    driver: local
+
